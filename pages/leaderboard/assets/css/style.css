@@ -11,7 +11,7 @@ body {
 
 
 .background-image {
-    background-image: url('/assets/img/SM.gif');
+    background-image: url('../img/SM.gif');
     background-size: cover; /* Ensures the image covers the entire background */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-position: center; /* Centers the image */
@@ -183,7 +183,7 @@ th, td {
     width: 25px;
     height: 25px;
     margin-right: 5px;
-    background-image: url('/pages/leaderboard/assets/img/1.png');
+    background-image: url('../img/1.png');
     background-size: cover;
     vertical-align: middle;
 }
@@ -194,7 +194,7 @@ th, td {
     width: 25px;
     height: 25px;
     margin-right: 5px;
-    background-image: url('/pages/leaderboard/assets/img/2.png');
+    background-image: url('../img/2.png');
     background-size: cover;
     vertical-align: middle;
 }
@@ -205,7 +205,7 @@ th, td {
     width: 25px;
     height: 25px;
     margin-right: 5px;
-    background-image: url('/pages/leaderboard/assets/img/3.png');
+    background-image: url('../img/3.png');
     background-size: cover;
     vertical-align: middle;
 }
