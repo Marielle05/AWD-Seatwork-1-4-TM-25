@@ -1,4 +1,4 @@
-const players = []; // Empty array to store player data
+const players = JSON.parse(localStorage.getItem('players')) || []; // Load players from localStorage, if available
 
 function sortPlayers(criteria) {
     let sortedPlayers;
@@ -56,6 +56,10 @@ document.querySelector('#addPlayer').addEventListener('click', () => {
 
     if (name && !isNaN(score) && !isNaN(level)) {
         players.push({ name, score, level });
+        
+        // Save players to localStorage
+        localStorage.setItem('players', JSON.stringify(players));
+
         const sortedPlayers = sortPlayers(document.querySelector('#sortCriteria').value);
         displayLeaderboard(sortedPlayers);
 
