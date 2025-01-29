@@ -4,23 +4,23 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/zyx-0314/">
+  <a href="https://github.com/Marielle05/">
   <!-- TODO: If you want to add logo or banner you can add it here -->
-    <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
+    <img src="/assets/img/LOGO.png" alt="" width="130" height="100">
   </a>
 <!-- TODO: Change Title to the name of the title of your Project -->
-  <h3 align="center">Title</h3>
+  <h3 align="center">Seatwork-1-4-TM-25</h3>
 </div>
 <!-- TODO: Make a short description -->
 <div align="center">
-  Short Description. (Optional)
+  The Player Management System is a program that stores and organizes the names, scores, and levels of 10 players. It allows users to sort the player list dynamically based on a chosen criterion—name, score, or level—using efficient sorting algorithms.
 </div>
 
 <br />
 
 <!-- TODO: Change the zyx-0314 into your github username  -->
 <!-- TODO: Change the WD-Template-Project into the same name of your folder -->
-![](https://visit-counter.vercel.app/counter.png?page=zyx-0314/WD-Template-Project)
+![](https://visit-counter.vercel.app/counter.png?page=Marielle05/AWD-Seatwork-1-4-TM-25)
 
 [![wakatime](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8.svg)](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8)
 
@@ -63,16 +63,19 @@ Description of the project in details.
 
 Guiding Question:
 - What is the project
+The Player Management System is a program designed to store, manage, and sort player data efficiently. It keeps track of essential details, including each player's name, score, and level. The system allows users to sort players dynamically based on different criteria, making it easier to organize and analyze player performance. This project is particularly useful for game development, leaderboards, and data-driven applications that require structured player information.
+
 - Whats the purpose
-- What are key components
-- What technology used and how it is used
+The primary purpose of this project is to efficiently manage player records while providing a sorting mechanism to arrange the data based on user preferences. By allowing sorting based on name, score, or level, the system helps in analyzing player rankings and progress. This can be beneficial in competitive gaming, training analysis, or even general leaderboard maintenance, ensuring structured and accessible player information.
+
 
 ### Key Components
 <!-- TODO: List of Key Components -->
 <!-- The following are just sample -->
-- MultiPage Website/Single Page Website
-- Parallax transition
-- Transactional
+- MultiPage Website
+- Player Management System
+- Hover Effect
+- Sticky Effect
 
 ### Technology
 <!-- TODO: List of Technology Used -->
@@ -119,4 +122,4 @@ WD-ProjectName
 <!-- TODO: Add References -->
 | Title | Purpose | Link |
 |-|-|-|
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
+| Canva | Utilized for designs | [Link](https://www.canva.com/) |
