@@ -1,0 +1,308 @@
+
+body {
+    text-align: center;
+    justify-content: center;
+    padding: 30px;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+
+
+.background-image {
+    background-image: url('/assets/img/SM.gif');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    height: 100%; /* Sets height to 100% of the viewport */
+    width: 100%; /* Ensures the background spans the full width of the viewport */
+    position: fixed; /* Keeps the background fixed in place */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Places the background behind all other content */
+    
+}
+
+
+
+#backToHome {
+    position: fixed;
+    left: 4%;
+    top: 10%;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 50px;
+    color: white; /* Text color */
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    border-radius: 8px; /* Optional rounded corners */
+    cursor: pointer; /* Optional: changes cursor to pointer when hovering */
+    font-family: 'Press Start 2P', cursive; /* Pixelated font */
+    font-size: 30px; /* Size of the X */
+    border: none; /* Optional: remove button border */
+    outline: none; /* Optional: remove button outline */
+}
+
+#backToHome {
+    background: #E76E55;
+    box-shadow: inset -3px -3px 0px 0px #8C2022;
+}
+
+#backToHome:hover,
+#backToHome:focus {
+    background: #CE372B;
+    box-shadow: inset -4px -4px 0px 0px #8C2022;
+}
+
+
+
+
+.container {
+    width: 500px; /* Adjust the container width */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;  /* Reduced padding for more space */
+    position: fixed; /* Fixed position */
+    top: 50%;
+    margin-left: 15%;
+    transform: translate(-50%, -50%); /* Adjusted translation for better centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 30rem;
+    border: 6px solid black;
+    box-shadow: inset -8px -8px 0px 0px #E59400;
+    background-color: #F2C409;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px; /* Reduced margin */
+    font-size: 28px; /* Increased font size for header */
+    position: sticky; /* Keep the title fixed */
+    top: 0;
+    padding: 5px 0;
+    z-index: 1; /* Ensure it stays above the rest of the content */
+}
+
+select {
+    margin: 10px;
+    padding: 10px;  /* Increased padding for better appearance */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    border: 2px solid black;
+    position: sticky;
+    top: 50px; /* Position the dropdown below the header */
+    background-color: rgba(255, 255, 255, 0.8); /* Same background for consistency */
+    z-index: 1; /* Ensure it stays above the rest of the content */
+    outline: none;
+    box-shadow: 4px 4px 0px #E59400; /* Simulates an outer border with a shadow effect */
+}
+
+table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px; /* Increased font size for table content */
+    margin-top: 20px;
+    overflow: hidden; /* Hide overflow */
+    height: 30rem;
+}
+
+thead th {
+    background-color: #ffb732;
+    color: white;
+    position: sticky; /* Keep headers fixed */
+    top: 100px; /* Position the headers below the dropdown */
+    z-index: 2; /* Ensure table headers stay above the body content */
+}
+ 
+th:first-child {
+    border: 4px solid black; /* Adds border on all sides */
+    border-right: none; /* Removes the right border */
+}
+
+th:nth-child(2) {
+    border: 3.5px solid black; /* Adds border on all sides */
+}
+
+th:last-child {
+    border: 4px solid black; /* Adds border on all sides */
+    border-left: none; /* Removes the left border */
+}
+
+
+th, td {
+    padding: 15px; /* Increased padding for better spacing */
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    background-color: #f2f2f2;
+}
+
+tbody {
+    display: block;
+    height: 50rem;
+    overflow-y: scroll;
+    border: 4px solid black;
+    border-top: none;
+}
+
+/* Flexbox layout for equal gaps between Name, Score, and Level */
+table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+thead, tbody {
+    display: block;
+    width: 100%;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Ensure columns have equal width */
+th, td {
+    flex: 1; /* All columns will take equal space */
+}
+
+/* General styling omitted for brevity */
+
+.medal-gold::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    background-image: url('/pages/leaderboard/assets/img/1.png');
+    background-size: cover;
+    vertical-align: middle;
+}
+
+.medal-silver::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    background-image: url('/pages/leaderboard/assets/img/2.png');
+    background-size: cover;
+    vertical-align: middle;
+}
+
+.medal-bronze::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    background-image: url('/pages/leaderboard/assets/img/3.png');
+    background-size: cover;
+    vertical-align: middle;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    border: 4px solid black;
+    box-shadow: 4px 4px 0px #E59400;
+    background-color: #ffb732;
+    color: white;
+    cursor: pointer;
+    width: 90%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #CE372B;
+}
+
+/* Main container for leaderboard and form */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center the main container */
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Add spacing between the two containers */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the main-container horizontally */
+    padding: 20px;
+}
+
+
+
+/* Styles for the form container */
+.form-container {
+    flex: 1; /* Allow it to take up equal space as container */
+    max-width: 400px; /* Restrict form-container to a reasonable width */
+    background-color: #F2C409;
+    box-shadow: inset -8px -8px 0px 0px #E59400;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 55%;
+    margin-top: 17px;
+    border: 6px solid black;
+    
+}
+
+.form-container h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+#inputForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 90%;
+    margin: 10px 0;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    outline: none;
+    
+}
+
+/* Styling for the input fields */
+#inputForm input {
+    position: relative;
+    margin: 10px 0;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    border: 4px solid #000; /* Inner black border */
+    background-color: #E8E8E8; /* Light gray background */
+    color: #000;
+    text-align: center;
+    outline: none;
+    box-shadow: 4px 4px 0px #E59400; /* Simulates an outer border with a shadow effect */
+    border-radius: 0;
+}
+
+#inputForm input:focus {
+    box-shadow: 4px 4px 0px #D1C4E9; /* Change shadow to light purple on focus */
+    background-color: #F8F0FF; /* Subtle light background change */
+}
+
+#leaderboard tbody {
+    background-color: white;
+    display: block;
+}

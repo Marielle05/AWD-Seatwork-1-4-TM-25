@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Leaderboard</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-image">
+
+        <a href="/index.html">
+            <button id="backToHome">X</button>
+        </a>
+
+        <div class="main-container"> 
+
+            <!-- Leaderboard container -->
+            <div class="container">
+                <h1>Leaderboard</h1>
+                <div>
+                    <label for="sortCriteria">Sort by:</label>
+                    <select id="sortCriteria">
+                        <option value="name">Name</option>
+                        <option value="score">Score</option>
+                        <option value="level">Level</option>
+                    </select>
+                </div>
+                <table id="leaderboard">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Score</th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Player rows will be inserted dynamically -->
+                    </tbody>
+                </table>
+            </div>
+    
+            <!-- Input form container -->
+            <div class="form-container">
+                <h1>Add Player</h1>
+                <div id="inputForm">
+                    <input type="text" id="playerName" placeholder="Enter name">
+                    <input type="number" id="playerScore" placeholder="Enter score">
+                    <input type="number" id="playerLevel" placeholder="Enter level">
+                    <button id="addPlayer">Add Player</button>
+                </div>
+            </div>
+    
+        </div>
+    
+        <script src="./assets/js/script.js"></script>
+    </div>
+    
+</body>
+</html>
