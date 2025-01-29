@@ -1,0 +1,111 @@
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.background-image {
+    background-image: url('/assets/img/SM.gif');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    height: 100%; /* Sets height to 100% of the viewport */
+    width: 100%; /* Ensures the background spans the full width of the viewport */
+    position: fixed; /* Keeps the background fixed in place */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Places the background behind all other content */
+    
+}
+
+
+/* GLOBAL STYLES */
+body {
+    text-align: center;
+    justify-content: center;
+    padding: 30px;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    line-height: 3.4rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+hr {
+    max-width: 100px;
+    border: 0;
+}
+
+
+/* BUTTON CONTAINER STYLES */
+.button-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh; /* Full viewport height for vertical centering */
+    width: 100vw; /* Full viewport width for horizontal centering */
+    gap: 10px; /* Adjust gap between buttons (optional) */
+    top: 0;
+    left: 0;
+}
+
+
+/* BUTTON STYLES */
+.eightbit-btn {
+    background: #92CD41;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    box-shadow: inset -4px -4px 0px 0px #4AA52E;
+    border: 6px solid black;
+    text-transform: uppercase;
+}
+
+.eightbit-btn:hover,
+.eightbit-btn:focus {
+    background: #76c442;
+    box-shadow: inset -6px -6px 0px 0px #4AA52E;
+}
+
+
+/* RESET BUTTON */
+.eightbit-btn--Settings {
+    background: #E76E55;
+    box-shadow: inset -4px -4px 0px 0px #8C2022;
+}
+
+.eightbit-btn--Settings:hover,
+.eightbit-btn--Settings:focus {
+    background: #CE372B;
+    box-shadow: inset -6px -6px 0px 0px #8C2022;
+}
+
+/* PROCEED BUTTON */
+.eightbit-btn--Leaderboard {
+    background: #F7D51D;
+    box-shadow: inset -4px -4px 0px 0px #E59400;
+}
+
+.eightbit-btn--Leaderboard:hover,
+.eightbit-btn--Leaderboard:focus {
+    background: #F2C409;
+    box-shadow: inset -6px -6px 0px 0px #E59400;
+}
