@@ -1,15 +1,29 @@
-const players = JSON.parse(localStorage.getItem('players')) || []; // Load players from localStorage, if available
+const players = JSON.parse(localStorage.getItem('players')) || []; // Load players from localStorage
+
+let sortState = {
+    name: 'asc',
+    score: 'desc',
+    level: 'desc'
+};
 
 function sortPlayers(criteria) {
-    let sortedPlayers;
-    if (criteria === 'name') {
-        sortedPlayers = [...players].sort((a, b) => a.name.localeCompare(b.name));
-    } else if (criteria === 'score') {
-        sortedPlayers = [...players].sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
-    } else if (criteria === 'level') {
-        sortedPlayers = [...players].sort((a, b) => b.level - a.level || a.name.localeCompare(b.name));
-    }
+    let sortedPlayers = [...players];
+
+    sortedPlayers.sort((a, b) => {
+        if (criteria === 'name') {
+            return sortState[criteria] === 'asc' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+        } else {
+            return sortState[criteria] === 'asc' ? a[criteria] - b[criteria] : b[criteria] - a[criteria];
+        }
+    });
+
     return sortedPlayers;
+}
+
+function updateSortIcons(criteria) {
+    document.querySelectorAll('.sort-icon').forEach(icon => icon.textContent = '▲'); // Reset icons
+    let icon = document.querySelector(`#sortBy${criteria.charAt(0).toUpperCase() + criteria.slice(1)} .sort-icon`);
+    icon.textContent = sortState[criteria] === 'asc' ? '▲' : '▼';
 }
 
 function displayLeaderboard(sortedPlayers) {
@@ -19,34 +33,43 @@ function displayLeaderboard(sortedPlayers) {
     sortedPlayers.forEach((player, index) => {
         const row = document.createElement('tr');
 
-        // Create a name cell and assign the medal class if applicable
         const nameCell = document.createElement('td');
         if (index === 0) nameCell.classList.add('medal-gold');
         else if (index === 1) nameCell.classList.add('medal-silver');
         else if (index === 2) nameCell.classList.add('medal-bronze');
         nameCell.textContent = player.name;
 
-        // Create other cells
         const scoreCell = document.createElement('td');
         scoreCell.textContent = player.score;
 
         const levelCell = document.createElement('td');
         levelCell.textContent = player.level;
 
-        // Append cells to the row
         row.appendChild(nameCell);
         row.appendChild(scoreCell);
         row.appendChild(levelCell);
 
-        // Append row to the table body
         leaderboardBody.appendChild(row);
     });
 }
 
-document.querySelector('#sortCriteria').addEventListener('change', (event) => {
-    const selectedCriteria = event.target.value;
-    const sortedPlayers = sortPlayers(selectedCriteria);
-    displayLeaderboard(sortedPlayers);
+// Event listeners for sorting columns
+document.querySelector('#sortByName').addEventListener('click', () => {
+    sortState.name = sortState.name === 'asc' ? 'desc' : 'asc';
+    displayLeaderboard(sortPlayers('name'));
+    updateSortIcons('name');
+});
+
+document.querySelector('#sortByScore').addEventListener('click', () => {
+    sortState.score = sortState.score === 'asc' ? 'desc' : 'asc';
+    displayLeaderboard(sortPlayers('score'));
+    updateSortIcons('score');
+});
+
+document.querySelector('#sortByLevel').addEventListener('click', () => {
+    sortState.level = sortState.level === 'asc' ? 'desc' : 'asc';
+    displayLeaderboard(sortPlayers('level'));
+    updateSortIcons('level');
 });
 
 document.querySelector('#addPlayer').addEventListener('click', () => {
@@ -56,14 +79,11 @@ document.querySelector('#addPlayer').addEventListener('click', () => {
 
     if (name && !isNaN(score) && !isNaN(level)) {
         players.push({ name, score, level });
-        
-        // Save players to localStorage
         localStorage.setItem('players', JSON.stringify(players));
 
-        const sortedPlayers = sortPlayers(document.querySelector('#sortCriteria').value);
-        displayLeaderboard(sortedPlayers);
+        displayLeaderboard(sortPlayers('name'));
+        updateSortIcons('name');
 
-        // Clear input fields
         document.querySelector('#playerName').value = '';
         document.querySelector('#playerScore').value = '';
         document.querySelector('#playerLevel').value = '';
@@ -74,3 +94,4 @@ document.querySelector('#addPlayer').addEventListener('click', () => {
 
 // Initial display
 displayLeaderboard(sortPlayers('name'));
+updateSortIcons('name');
